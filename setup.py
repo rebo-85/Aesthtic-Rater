@@ -1,0 +1,24 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="AestheticRater",
+    version="0.1.0",
+    description="Facial beauty prediction using PyTorch, ResNet50, and label distribution learning.",
+    author="",
+    packages=find_packages(),
+    install_requires=[
+        "torch==2.7.1+cu118",
+        "torchvision==0.22.1+cu118",
+        "torchaudio==2.7.1+cu118",
+        "opencv-python==4.12.0.88",
+        "pandas==2.3.3",
+        "numpy==2.2.6",
+        "tqdm==4.67.1",
+        "pillow==12.0.0",
+        "ultralytics==8.3.221",
+        "bing-image-downloader==1.1.2",
+        "openpyxl==3.1.5",
+        "scipy==1.16.2"
+    ],
+    python_requires=">=3.10",
+)
