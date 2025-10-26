@@ -9,7 +9,6 @@ import numpy as np
 import os
 from tqdm import tqdm
 import platform
-from rich import print
 
 imagenet_norm = Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 
@@ -107,7 +106,7 @@ patience = 10
 epochs = 100
 wait = 0
 
-print(f"[bold green]Training started[/bold green]")
+print(f"Training started")
 
 try:
     for epoch in range(epochs):
@@ -131,11 +130,11 @@ try:
         else:
             wait += 1
             if wait >= patience:
-                print(f"[red]Early stopping[/red]")
+                print(f"Early stopping")
                 break
 
         print(
-            f"[yellow]| Loss: {epoch_loss:.4f} | Best Loss: {best_loss:.4f} |[/yellow]")
+            f"| Loss: {epoch_loss:.4f} | Best Loss: {best_loss:.4f} |")
         torch.save(model.state_dict(), 'dropout/aesthetic_rater.inference.pt')
 except BaseException as e:
     print('Training interrupted:', e)
